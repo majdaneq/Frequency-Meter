@@ -37,20 +37,21 @@ begin
 					if Ylicznik="1010" then
 						Ylicznik<="0000"; 
 					end if ;
+			else Ylicznik<="0000";
 			end if;
 		end if ;		
 	end process;
-	Y<=Ylicznik;
+	--Y<=Ylicznik;
 	
 	--AUTOMAT GENERUJACY GATE	
 	process (CLK)
 	begin  	
 		if(clka="100") then
-			CE<='1';			
+			CE<='1'; 		
 		end if;	  
 		
 		if(clka="000") then
-			CE<='0';
+			CE<='0';			
 		end if;	
 		
 		if (clka="111") then
@@ -58,8 +59,11 @@ begin
 		end if;	
 				  				--gdy CE wylaczony, zlicza 8 zboczy CLK
    	clka<=clka+1; 
+	   		   
+	   
 	end process; 	
 	Yx<=clka;
+	Y<=Ylicznik;
 	
 	--ZATRZASK	  
 	--ZATRZASKUJE WARTOSC LICZNIKA, GDY GATE SIE KONCZY
@@ -71,7 +75,9 @@ begin
 	 		laciek<=Ylicznik;
 		end if;
 	end process;	
-	Ylatch<=laciek;	  
+	Ylatch<=laciek;	 
+	
+	
 	
 	
 	

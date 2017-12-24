@@ -1,4 +1,4 @@
-97
+110
 ~E 1 "./../src/Core.vhd" 6 Core
 ~A 1 "./../src/Core.vhd" 24 Core
 ~E 1 "./../src/Core_TB.vhd" 7 core_tb

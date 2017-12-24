@@ -47,7 +47,7 @@ UCF=
 WindowVisible=0
 
 [HierarchyViewer]
-HierarchyInformation=core|Core|0 core_tb|testbench_for_core|1 
+HierarchyInformation=core_tb|testbench_for_core|1   
 ShowHide=ShowTopLevel
 Selected=
 
