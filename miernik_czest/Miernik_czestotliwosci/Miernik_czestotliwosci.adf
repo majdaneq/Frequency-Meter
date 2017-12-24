@@ -27,6 +27,7 @@ ON_SERVERFARM_SYNTH=0
 ON_SERVERFARM_IMPL=0
 ON_SERVERFARM_SIM=0
 DVM_DISPLAY=NO
+fileopenfolder=C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src
 
 [LocalVerilogSets]
 EnableSLP=1
@@ -53,8 +54,10 @@ Selected=
 [Files]
 /Core.vhd=-1
 /Core_TB.vhd=-1
+/tutorvhdl_TB_runtest.do=-1
 
 [Files.Data]
 .\src\Core.vhd=VHDL Source Code
-
 .\src\Core_TB.vhd=VHDL Source Code
+.\src\tutorvhdl_TB_runtest.do=Macro
+
