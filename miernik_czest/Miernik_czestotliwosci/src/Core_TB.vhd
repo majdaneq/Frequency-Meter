@@ -10,7 +10,9 @@ end core_tb;
 architecture TB_ARCHITECTURE of core_tb is
 	-- Component declaration of the tested unit
 	component core
-	port(	  
+	port(	
+	LE:in STD_LOGIC;
+	Ylatch:inout STD_LOGIC_vector(3 downto 0) := "0000";
 	fx:in STD_logic;   					 --mierzony sygnal		 
 	fautomat: in STD_LOGIC;	
 	CLR:in STD_LOGIC;	
@@ -33,10 +35,11 @@ architecture TB_ARCHITECTURE of core_tb is
 	signal CE: STD_LOGIC;
 	signal Yautomat : STD_LOGIC;
 	signal CLK : STD_LOGIC;
-		
+	signal LE : STD_LOGIC;	
 	-- Observed signals - signals mapped to the output ports of tested entity
 	signal Y : STD_LOGIC_VECTOR(3 downto 0); --zad4
-	signal Yx: STD_LOGIC_vector(2 downto 0);
+	signal Yx: STD_LOGIC_vector(2 downto 0);  
+	signal Ylatch : STD_LOGIC_VECTOR(3 downto 0);
 	--Signal is used to stop clock signal generators
 	signal END_SIM: BOOLEAN:=FALSE;
 
@@ -46,16 +49,17 @@ begin
 
 	-- Unit Under Test port map
 	UUT : core
-	port map ( 		  
-	fx=>fx,		
+	port map ( 	
+			Ylatch=>Ylatch,
+			LE=>LE,
+			fx=>fx,		
 			Yx=>Yx,
 			fautomat=>fautomat,
 			CLR=>CLR,
 			CE=>CE,		
 			Yautomat=>Yautomat,	 			
 			CLK => CLK,
-			Y => Y
-			
+			Y => Y	 			
 		); 
 		
 		
@@ -66,8 +70,16 @@ STIMULUS: process
 begin  -- of stimulus process
 --wait for <time to next event>; -- <current time> 
 	--CE<='1';
-	CLR<='0';
-				wait for 2000 ns;
+	CLR<='0';  		
+	wait for 200 ns;
+	LE<='1';
+	wait for 100 ns;
+	LE<='0'; 
+	wait for 100 ns;
+	LE<='1';
+	wait for 1000ns;
+	LE<='0';
+	wait for 1000ns;
 	END_SIM <= TRUE;
 	
 	

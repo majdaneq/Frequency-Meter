@@ -11,7 +11,9 @@ wave -noreg CE
 wave -noreg Yautomat
 wave -noreg CLK
 wave -noreg Y 
-wave -noreg Yx
+wave -noreg Yx		  
+wave -noreg LE
+wave -noreg Ylatch
 
 run 6000.00 ns
 # The following lines can be used for timing simulation
