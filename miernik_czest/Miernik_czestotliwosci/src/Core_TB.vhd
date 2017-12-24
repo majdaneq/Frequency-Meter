@@ -13,8 +13,9 @@ architecture TB_ARCHITECTURE of core_tb is
 	port(	  
 	fx:in STD_logic;   					 --mierzony sygnal		 
 	fautomat: in STD_LOGIC;	
-	CLR:in STD_LOGIC;
-	CE:in STD_LOGIC;   
+	CLR:in STD_LOGIC;	
+	Yx:inout STD_LOGIC_vector(2 downto 0) := "000";
+	CE:inout STD_LOGIC :='0';   
 	Yautomat: inout STD_LOGIC;  		 --GATE/CE dla liczników
 	Y:inout STD_LOGIC_vector(3 downto 0) :="0000";	 --wyjscie licznikow dekadowych
 	CLK:in STD_logic			  
@@ -35,7 +36,7 @@ architecture TB_ARCHITECTURE of core_tb is
 		
 	-- Observed signals - signals mapped to the output ports of tested entity
 	signal Y : STD_LOGIC_VECTOR(3 downto 0); --zad4
-
+	signal Yx: STD_LOGIC_vector(2 downto 0);
 	--Signal is used to stop clock signal generators
 	signal END_SIM: BOOLEAN:=FALSE;
 
@@ -46,7 +47,8 @@ begin
 	-- Unit Under Test port map
 	UUT : core
 	port map ( 		  
-			fx=>fx,				
+	fx=>fx,		
+			Yx=>Yx,
 			fautomat=>fautomat,
 			CLR=>CLR,
 			CE=>CE,		
@@ -63,7 +65,7 @@ begin
 STIMULUS: process
 begin  -- of stimulus process
 --wait for <time to next event>; -- <current time> 
-	CE<='1';
+	--CE<='1';
 	CLR<='0';
 				wait for 2000 ns;
 	END_SIM <= TRUE;
