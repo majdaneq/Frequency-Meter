@@ -16,7 +16,7 @@ architecture TB_ARCHITECTURE of core_tb is
 	CLR:in STD_LOGIC;
 	CE:in STD_LOGIC;   
 	Yautomat: inout STD_LOGIC;  		 --GATE/CE dla liczników
-	Y:inout STD_LOGIC_vector(2 downto 0) :="000";	 --wyjscie licznikow dekadowych
+	Y:inout STD_LOGIC_vector(3 downto 0) :="0000";	 --wyjscie licznikow dekadowych
 	CLK:in STD_logic			  
 		); 									
 	end component; 
@@ -34,7 +34,7 @@ architecture TB_ARCHITECTURE of core_tb is
 	signal CLK : STD_LOGIC;
 		
 	-- Observed signals - signals mapped to the output ports of tested entity
-	signal Y : STD_LOGIC_VECTOR(2 downto 0); --zad4
+	signal Y : STD_LOGIC_VECTOR(3 downto 0); --zad4
 
 	--Signal is used to stop clock signal generators
 	signal END_SIM: BOOLEAN:=FALSE;
@@ -65,7 +65,7 @@ begin  -- of stimulus process
 --wait for <time to next event>; -- <current time> 
 	CE<='1';
 	CLR<='0';
-				wait for 600 ns;
+				wait for 2000 ns;
 	END_SIM <= TRUE;
 	
 	

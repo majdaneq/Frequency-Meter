@@ -1,6 +1,6 @@
-33
+43
 ~E 1 "./../src/Core.vhd" 6 Core
-~A 1 "./../src/Core.vhd" 20 Core
+~A 1 "./../src/Core.vhd" 21 Core
 ~E 1 "./../src/Core_TB.vhd" 7 core_tb
 ~A 1 "./../src/Core_TB.vhd" 10 TB_ARCHITECTURE
 ~C 1 "./../src/Core_TB.vhd" 101 testbench_for_core
