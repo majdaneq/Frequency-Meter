@@ -47,17 +47,39 @@ UCF=
 WindowVisible=0
 
 [HierarchyViewer]
-HierarchyInformation=core_tb|testbench_for_core|1   
+HierarchyInformation=miernik_tb|testbench_for_top|1
 ShowHide=ShowTopLevel
 Selected=
 
+[Groups]
+Core=1
+
 [Files]
-/Core.vhd=-1
-/Core_TB.vhd=-1
-/tutorvhdl_TB_runtest.do=-1
+/Dec_Counters.vhd=-1
+/Dec_Counter2.vhd=-1
+/latch.vhd=-1
+/miernik_tb.vhd=-1
+/miernik_TB_runtest.do=-1
+/automat.vhd=-1
+/top.bde=-1
+/Dec_conter3.vhd=-1
+Core/Core.vhd=-1
+Core/Core_TB.vhd=-1
+Core/tutorvhdl_TB_runtest.do=-1
 
 [Files.Data]
-.\src\Core.vhd=VHDL Source Code
-.\src\Core_TB.vhd=VHDL Source Code
-.\src\tutorvhdl_TB_runtest.do=Macro
+.\src\Dec_Counters.vhd=VHDL Source Code
+.\src\Dec_Counter2.vhd=VHDL Source Code
+.\src\latch.vhd=VHDL Source Code
+.\src\miernik_tb.vhd=VHDL Source Code
+.\src\miernik_TB_runtest.do=Macro
+.\src\automat.vhd=VHDL Source Code
+.\src\top.bde=Block Diagram
+.\src\Dec_conter3.vhd=VHDL Source Code
+.\src\Core\Core.vhd=VHDL Source Code
+.\src\Core\Core_TB.vhd=VHDL Source Code
+.\src\Core\tutorvhdl_TB_runtest.do=Macro
+.\compile\top.vhd=VHDL Source Code
 
+[file_out:/top.bde]
+/..\compile\top.vhd=-1

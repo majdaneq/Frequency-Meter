@@ -1,2 +1,10 @@
 i<>.\src\Core.vhd
 i<>.\src\Core_TB.vhd
+i<>.\src\Dec_Counters.vhd
+i<>.\src\miernik_tb.vhd
+i<>.\src\automat.vhd
+i<>.\src\latch.vhd
+i<>.\src\Dec_Counter2.bde
+i<>.\src\Dec_Counter2.vhd
+i<>.\src\top.bde
+i<>.\src\Dec_conter3.vhd
