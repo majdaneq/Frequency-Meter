@@ -8,7 +8,7 @@
 -------------------------------------------------------------------------------
 --
 -- File        : C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\compile\top.vhd
--- Generated   : Mon Dec 25 20:04:49 2017
+-- Generated   : Tue Dec 26 14:44:03 2017
 -- From        : C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\top.bde
 -- By          : Bde2Vhdl ver. 2.6
 --
