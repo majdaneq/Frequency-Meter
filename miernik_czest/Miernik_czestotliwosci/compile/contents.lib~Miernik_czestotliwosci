@@ -1,4 +1,4 @@
-5
+26
 ~E 1 "./../src/automat.vhd" 6 automat
 ~A 1 "./../src/automat.vhd" 17 automat
 ~E 1 "./../src/Core/Core.vhd" 6 Core

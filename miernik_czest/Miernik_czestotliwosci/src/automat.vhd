@@ -25,7 +25,7 @@ begin
 	begin  	
 		if(clka="100") then
 			GATE_t<='1'; 
-			laciek<='1';
+			
 		end if;	  
 		
 		if(clka="000") then
@@ -35,6 +35,7 @@ begin
 		
 		if (clka="111") then
 			clka<="000"	 ; 
+			laciek<='1';
 			
 		end if;	
 				 				--gdy GATE wylaczony, zlicza 13 zboczy CLK

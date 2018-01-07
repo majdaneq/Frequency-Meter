@@ -26,10 +26,10 @@ CurrentFontSize=-13
 Frame=0
 WindowWorkspaceInfo=LAAAAAAAAAADAAAA/////////////////////8sAAAB6AAAAkAYAAOwCAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAyAAAAAAAAAAAAAAAyAAAAMgAAAAAAAAAAAAAAAAAAAAAAAAACQAAAAEAAAA=
 [COMPILESTATUS|.\src\Top.bde]
-FileTimeLow=30637622
+FileTimeLow=30640112
 Status=Compiled
 [COMPILESTATUS|.\compile\Top.vhd]
-FileTimeLow=30637647
+FileTimeLow=30640112
 Status=Compiled
 [COMPILESTATUS|.\src\miernik_tb.vhd]
 FileTimeLow=30637622
@@ -54,7 +54,7 @@ Status=Modified
 FileTimeLow=30637622
 Status=Modified
 [COMPILESTATUS|.\src\automat.vhd]
-FileTimeLow=30637622
+FileTimeLow=30640111
 Status=Compiled
 [CACHEDOC|Aldec.Hde.HdePlugIn.7|.\Miernik_czestotliwosci\src/Core/Core.vhd|]
 CurrentLine=77
@@ -216,5 +216,11 @@ miernik_czestotliwosci=0
 [COMPILESTATUS|.\src\Dec_conter3.vhd]
 FileTimeLow=30637622
 Status=Compiled
+[COMPILESTATUS|.\src\uklad.asdb]
+FileTimeLow=30640112
+Status=Modified
+[COMPILESTATUS|.\src\uklad.awc]
+FileTimeLow=30640112
+Status=Modified
 [Gui config]
 RunFor=100 ns
