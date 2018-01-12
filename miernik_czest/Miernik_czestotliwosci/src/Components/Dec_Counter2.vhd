@@ -26,14 +26,17 @@ begin
 	process (fx, CLR)											--liczniki dekadowe
 	begin
 		if CLR='1' then   										--asynch res
+			GATEOUT<='0';
 			Ylicznik<=(others => '0'); 
-			GATE_OUT<='0';
+			
 		elsif fx'event and fx = '1' then	    				--narastajace zbocze fx
-			if GATEIN = '1' then 
-				if GATEIN2='1' then
-					Ylicznik<=Ylicznik +1;
+			if GATEIN = '1' then 								-- automat dziala 
+				if GATEIN2='1' then								-- 1. licznik przepelniony
+					Ylicznik<=Ylicznik +1; 
+					GATEOUT<='0';
 					if Ylicznik="1001" then
-						Ylicznik<="0000";						
+						Ylicznik<="0000";						--zerowanie	
+						GATEOUT<='1';
 					end if;						
 				end if;	
 			else Ylicznik<="0000";
@@ -44,9 +47,9 @@ begin
 	end process;   	
 	Y<=Ylicznik;	
 	
-	with Y select GATEOUT<=
-	'1' when "0000"	,
-	'0' when others;
+	--with Y select GATEOUT<=
+	--'1' when "0000"	,
+--	'0' when others;
 end Dec_Counter2;
 
 

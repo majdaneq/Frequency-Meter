@@ -24,10 +24,9 @@ begin
 	process (GATEIN2, CLR)											--liczniki dekadowe
 	begin
 		if CLR='1' then   										--asynch res
-			Ylicznik<=(others => '0');
-		end if;
-		if GATEIN='1' then 
-					if GATEIN2='1' then
+			Ylicznik<=(others => '0');		
+		elsif GATEIN='1' then 										--automat dziala
+					if GATEIN2='1' then							--2gi licznik przepelniony
 						Ylicznik<=Ylicznik+1;
 							if Ylicznik="1001" then
 								Ylicznik<="0000";

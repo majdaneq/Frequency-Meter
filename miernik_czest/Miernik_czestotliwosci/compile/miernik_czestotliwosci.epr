@@ -1,10 +1,10 @@
-"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\Dec_Counters.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
-"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\latch.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
-"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\Dec_conter3.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
-"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\Dec_Counter2.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
-"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\automat.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
 ".\..\compile\top.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
-"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\miernik_tb.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
-"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\Core\Core.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
-"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\Core\Core_TB.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
+"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\tb\miernik_tb.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
+"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\Components\Dec_Counters.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
+"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\Components\latch.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
+"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\Components\Dec_conter3.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
+"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\Components\Dec_Counter2.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
+"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\Components\automat.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
+"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\Components\segcode.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
+"C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\Components\Prescaler.vhd" VHDL miernik_czestotliwosci 1 0 0 -02
 . . 0 0 0

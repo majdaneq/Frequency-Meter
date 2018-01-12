@@ -47,43 +47,58 @@ UCF=
 WindowVisible=0
 
 [HierarchyViewer]
-HierarchyInformation=miernik_tb|testbench_for_top|1 
+HierarchyInformation=
 ShowHide=ShowTopLevel
 Selected=
 
-[Groups]
-Core=1
-
-[Files]
-/Dec_Counters.vhd=-1
-/latch.vhd=-1
-/Dec_conter3.vhd=-1
-/Dec_Counter2.vhd=-1
-/automat.vhd=-1
-/top.bde=-1
-/miernik_tb.vhd=-1
-/miernik_TB_runtest.do=-1
-/uklad.asdb=-1
-/uklad.awc=-1
-Core/Core.vhd=-1
-Core/Core_TB.vhd=-1
-Core/tutorvhdl_TB_runtest.do=-1
-
-[Files.Data]
-.\src\Dec_Counters.vhd=VHDL Source Code
-.\src\latch.vhd=VHDL Source Code
-.\src\Dec_conter3.vhd=VHDL Source Code
-.\src\Dec_Counter2.vhd=VHDL Source Code
-.\src\automat.vhd=VHDL Source Code
-.\src\top.bde=Block Diagram
-.\src\miernik_tb.vhd=VHDL Source Code
-.\src\miernik_TB_runtest.do=Macro
-.\src\uklad.asdb=Accelerated Waveform File
-.\src\uklad.awc=Accelerated Waveform Configuration
-.\src\Core\Core.vhd=VHDL Source Code
-.\src\Core\Core_TB.vhd=VHDL Source Code
-.\src\Core\tutorvhdl_TB_runtest.do=Macro
-
 [file_out:/top.bde]
 /..\compile\top.vhd=-1
+
+[Groups]
+Wave=1
+tb=1
+Components=1
+
+[Files]
+Wave/poprawiony3cicountslowclk.asdb=-1
+Wave/poprawiony3cicountslowclk.awc=-1
+Wave/uklad.asdb=-1
+Wave/uklad.awc=-1
+Wave/ukladcode7.asdb=-1
+Wave/ukladcode7.awc=-1
+Wave/ukladoce7presc.asdb=-1
+Wave/ukladoce7presc.awc=-1
+tb/top.bde=-1
+tb/miernik_tb.vhd=-1
+tb/miernik_TB_runtest.do=-1
+Components/Dec_Counters.vhd=-1
+Components/latch.vhd=-1
+Components/Dec_conter3.vhd=-1
+Components/Dec_Counter2.vhd=-1
+Components/automat.vhd=-1
+Components/segcode.vhd=-1
+Components/Prescaler.vhd=-1
+
+[Files.Data]
+.\src\Wave\poprawiony3cicountslowclk.asdb=Accelerated Waveform File
+.\src\Wave\poprawiony3cicountslowclk.awc=Accelerated Waveform Configuration
+.\src\Wave\uklad.asdb=Accelerated Waveform File
+.\src\Wave\uklad.awc=Accelerated Waveform Configuration
+.\src\Wave\ukladcode7.asdb=Accelerated Waveform File
+.\src\Wave\ukladcode7.awc=Accelerated Waveform Configuration
+.\src\Wave\ukladoce7presc.asdb=Accelerated Waveform File
+.\src\Wave\ukladoce7presc.awc=Accelerated Waveform Configuration
+.\src\tb\top.bde=Block Diagram
+.\src\tb\miernik_tb.vhd=VHDL Source Code
+.\src\tb\miernik_TB_runtest.do=Macro
+.\src\Components\Dec_Counters.vhd=VHDL Source Code
+.\src\Components\latch.vhd=VHDL Source Code
+.\src\Components\Dec_conter3.vhd=VHDL Source Code
+.\src\Components\Dec_Counter2.vhd=VHDL Source Code
+.\src\Components\automat.vhd=VHDL Source Code
+.\src\Components\segcode.vhd=VHDL Source Code
+.\src\Components\Prescaler.vhd=VHDL Source Code
+
+[file_out:tb/top.bde]
+tb/..\..\compile\top.vhd=-1
 

@@ -11,19 +11,24 @@ architecture TB_ARCHITECTURE of miernik_tb is
 	-- Component declaration of the tested unit
 	component top
 	port(	
-	GATE:inout STD_LOGIC:='0';
+		GATE:inout STD_LOGIC:='0';
 		GATEOUT:inout STD_LOGIC:='0'; 
-		--GATEOUT2:out STD_LOGIC:='0';
-	Y1:inout STD_LOGIC_vector(3 downto 0) := "0000";	 		--wyjscie licznikow dekadowych	
-	Y2:inout STD_LOGIC_vector(3 downto 0) := "0000";
-	Y3:inout STD_LOGIC_vector(3 downto 0) := "0000";
-		Ylatch1:out STD_LOGIC_vector(3 downto 0) := "0000";	 		--wyjscie licznikow dekadowych	
-		Ylatch2:out STD_LOGIC_vector(3 downto 0) := "0000";
-		Ylatch3:out STD_LOGIC_vector(3 downto 0) := "0000";
+		--GATEOUT2:out STD_LOGIC:='0'; 
+		CEO:out STD_LOGIC;
+		Y1:inout STD_LOGIC_vector(3 downto 0) := "0000";	 		--wyjscie licznikow dekadowych	
+		Y2:inout STD_LOGIC_vector(3 downto 0) := "0000";
+		Y3:inout STD_LOGIC_vector(3 downto 0) := "0000";
+		Ylatch1:out STD_LOGIC_vector(3 downto 0);	 		--wyjscie licznikow dekadowych	
+		Ylatch2:out STD_LOGIC_vector(3 downto 0);
+		Ylatch3:out STD_LOGIC_vector(3 downto 0); 
+		Ycode1:out STD_LOGIC_vector(6 downto 0):="0000000";	   
+		Ycode2:out STD_LOGIC_vector(6 downto 0):="0000000";
+		Ycode3:out STD_LOGIC_vector(6 downto 0):="0000000";
 		fx:in STD_logic:='0';
 		LE:inout STD_LOGIC:='0';
 		CLK:in STD_LOGIC;
 		CLR:in STD_LOGIC  
+		
 		); 									
 	end component; 
 
@@ -33,11 +38,15 @@ architecture TB_ARCHITECTURE of miernik_tb is
 	signal fx: STD_LOGIC;
 	signal CLR: STD_LOGIC;
 	signal GATE : STD_LOGIC;   		
-	signal CLK : STD_LOGIC;
+	signal CLK : STD_LOGIC;	 
+	signal CEO: STD_LOGIC;
 	-- Observed signals - signals mapped to the output ports of tested entity
 	signal Y1 : STD_LOGIC_VECTOR(3 downto 0);	  
 	signal Y2 : STD_LOGIC_VECTOR(3 downto 0);
 	signal Y3 : STD_LOGIC_VECTOR(3 downto 0);  
+	signal Ycode1 : STD_LOGIC_VECTOR(6 downto 0);	  
+	signal Ycode2 : STD_LOGIC_VECTOR(6 downto 0);
+	signal Ycode3 : STD_LOGIC_VECTOR(6 downto 0); 
 	signal Ylatch1 : STD_LOGIC_VECTOR(3 downto 0);	  
 	signal Ylatch2 : STD_LOGIC_VECTOR(3 downto 0);
 	signal Ylatch3 : STD_LOGIC_VECTOR(3 downto 0);	
@@ -55,14 +64,18 @@ begin
 	UUT : top
 	port map ( 
 			CLK=>CLK,
-			fx=>fx,		
+			fx=>fx,	
+			CEO=>CEO,
 			CLR=>CLR,
 			GATE=>GATE,	 
 			LE=>LE,
 			GATEOUT=>GATEOUT,	
 			Ylatch1 => Ylatch1,
 			Ylatch2 => Ylatch2,
-			Ylatch3 => Ylatch3,
+			Ylatch3 => Ylatch3,	
+			Ycode1 => Ycode1,
+			Ycode2 => Ycode2,
+			Ycode3 => Ycode3,
 			Y1 => Y1,
 			Y2 => Y2,
 			Y3 => Y3	 			
@@ -124,13 +137,13 @@ begin
 	--wait for <time to next event>; -- <current time>
 	if END_SIM = FALSE then
 		CLK <= '0';
-		wait for 114 ns; --0 fs
+		wait for 150 ns; --0 fs
 	else
 		wait;
 	end if;
 	if END_SIM = FALSE then
 		CLK<= '1';
-		wait for 114 ns; --50 ns
+		wait for 150 ns; --50 ns
 	else
 		wait;
 	end if;
