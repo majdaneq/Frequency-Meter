@@ -8,8 +8,8 @@
 -------------------------------------------------------------------------------
 --
 -- File        : C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\compile\top.vhd
--- Generated   : Fri Jan 12 01:26:13 2018
--- From        : C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\top.bde
+-- Generated   : Tue Jan 16 22:35:57 2018
+-- From        : C:\Users\szymo\Desktop\PSC_Projekt\miernik_czest\Miernik_czestotliwosci\src\tb\top.bde
 -- By          : Bde2Vhdl ver. 2.6
 --
 -------------------------------------------------------------------------------
@@ -30,13 +30,7 @@ entity top is
        CLK : in STD_LOGIC;
        CLR : in STD_LOGIC;
        fx : in STD_LOGIC;
-       CEO : out STD_LOGIC;
-       Ycode1 : out STD_LOGIC_VECTOR(6 downto 0);
-       Ycode2 : out STD_LOGIC_VECTOR(6 downto 0);
-       Ycode3 : out STD_LOGIC_VECTOR(6 downto 0);
-       Ylatch1 : out STD_LOGIC_VECTOR(3 downto 0);
-       Ylatch2 : out STD_LOGIC_VECTOR(3 downto 0);
-       Ylatch3 : out STD_LOGIC_VECTOR(3 downto 0);
+       Y : out STD_LOGIC_VECTOR(6 downto 0);
        GATE : inout STD_LOGIC;
        GATEOUT : inout STD_LOGIC;
        LE : inout STD_LOGIC;
@@ -100,6 +94,15 @@ component segcode
        Ycode : out STD_LOGIC_VECTOR(6 downto 0) := "0000000"
   );
 end component;
+component Mux
+  port (
+       CLK : in STD_LOGIC;
+       X1 : in STD_LOGIC_VECTOR(3 downto 0) := "0000";
+       X2 : in STD_LOGIC_VECTOR(3 downto 0) := "0000";
+       X3 : in STD_LOGIC_VECTOR(3 downto 0) := "0000";
+       Y : out STD_LOGIC_VECTOR(3 downto 0) := "0000"
+  );
+end component;
 component Prescaler
   port (
        CLK : in STD_LOGIC;
@@ -108,19 +111,14 @@ component Prescaler
   );
 end component;
 
-----     Constants     -----
-constant DANGLING_INPUT_CONSTANT : STD_LOGIC := 'Z';
-
 ---- Signal declarations used on the diagram ----
 
+signal GATE1252 : STD_LOGIC;
 signal GATE84 : STD_LOGIC;
+signal BUS3244 : STD_LOGIC_VECTOR(3 downto 0);
 signal BusOutput1 : STD_LOGIC_VECTOR(7 downto 0);
 signal BusOutput2 : STD_LOGIC_VECTOR(7 downto 0);
 signal BusOutput3 : STD_LOGIC_VECTOR(7 downto 0);
-signal Ycode : STD_LOGIC_VECTOR(6 downto 0);
-
----- Declaration for Dangling input ----
-signal Dangling_Input_Signal : STD_LOGIC;
 
 begin
 
@@ -128,25 +126,39 @@ begin
 
 U1 : automat
   port map(
-       CLK => CLK,
+       CLK => GATE1252,
        GATE => GATE,
        LE => LE
   );
 
 U10 : segcode
   port map(
-       CLR => Dangling_Input_Signal,
-       Ylatch(0) => BusOutput3(4),
-       Ylatch(1) => BusOutput3(5),
-       Ylatch(2) => BusOutput3(6),
-       Ylatch(3) => BusOutput3(7),
-       Ycode => Ycode
+       CLR => CLR,
+       Ycode => Y,
+       Ylatch => BUS3244
+  );
+
+U11 : Mux
+  port map(
+       CLK => CLK,
+       X1(0) => BusOutput3(4),
+       X1(1) => BusOutput3(5),
+       X1(2) => BusOutput3(6),
+       X1(3) => BusOutput3(7),
+       X2(0) => BusOutput1(4),
+       X2(1) => BusOutput1(5),
+       X2(2) => BusOutput1(6),
+       X2(3) => BusOutput1(7),
+       X3(0) => BusOutput2(4),
+       X3(1) => BusOutput2(5),
+       X3(2) => BusOutput2(6),
+       X3(3) => BusOutput2(7),
+       Y => BUS3244
   );
 
 U12 : Prescaler
   port map(
-       CEO => CEO,
-       CLK => CLK,
+       CLK => GATE1252,
        CLR => CLR
   );
 
@@ -167,16 +179,6 @@ U3 : Dec_Counter2
        GATEOUT => GATEOUT,
        Y => Y2,
        fx => fx
-  );
-
-U4 : segcode
-  port map(
-       CLR => Dangling_Input_Signal,
-       Ylatch(0) => BusOutput1(4),
-       Ylatch(1) => BusOutput1(5),
-       Ylatch(2) => BusOutput1(6),
-       Ylatch(3) => BusOutput1(7),
-       Ycode => Ycode
   );
 
 U5 : latch
@@ -221,39 +223,11 @@ U8 : Dec_Counter3
        fx => fx
   );
 
-U9 : segcode
-  port map(
-       CLR => Dangling_Input_Signal,
-       Ylatch(0) => BusOutput2(4),
-       Ylatch(1) => BusOutput2(5),
-       Ylatch(2) => BusOutput2(6),
-       Ylatch(3) => BusOutput2(7),
-       Ycode => Ycode
-  );
-
 
 ---- Terminal assignment ----
 
-    -- Output\buffer terminals
-	Ycode1 <= Ycode;
-	Ycode2 <= Ycode;
-	Ycode3 <= Ycode;
-	Ylatch1(0) <= BusOutput1(4);
-	Ylatch1(1) <= BusOutput1(5);
-	Ylatch1(2) <= BusOutput1(6);
-	Ylatch1(3) <= BusOutput1(7);
-	Ylatch2(0) <= BusOutput2(4);
-	Ylatch2(1) <= BusOutput2(5);
-	Ylatch2(2) <= BusOutput2(6);
-	Ylatch2(3) <= BusOutput2(7);
-	Ylatch3(0) <= BusOutput3(4);
-	Ylatch3(1) <= BusOutput3(5);
-	Ylatch3(2) <= BusOutput3(6);
-	Ylatch3(3) <= BusOutput3(7);
+    -- Inputs terminals
+	GATE1252 <= CLK;
 
-
----- Dangling input signal assignment ----
-
-Dangling_Input_Signal <= DANGLING_INPUT_CONSTANT;
 
 end top;

@@ -1,5 +1,6 @@
 .\src\tb\top.bde
 .\src\tb\miernik_tb.vhd
+.\src\Components\Mux.vhd
 .\src\Components\Dec_Counters.vhd
 .\src\Components\latch.vhd
 .\src\Components\Dec_conter3.vhd

@@ -11,3 +11,5 @@ i<>.\src\Dec_conter3.vhd
 i<>.\src\7segcode.vhd
 i<>.\src\segcode.vhd
 i<>.\src\Prescaler.vhd
+i<>.\src\Mux.vhd
+i<>.\src\Components\Mux.vhd

@@ -14,16 +14,16 @@ architecture TB_ARCHITECTURE of miernik_tb is
 		GATE:inout STD_LOGIC:='0';
 		GATEOUT:inout STD_LOGIC:='0'; 
 		--GATEOUT2:out STD_LOGIC:='0'; 
-		CEO:out STD_LOGIC;
+		--CEO:out STD_LOGIC;
 		Y1:inout STD_LOGIC_vector(3 downto 0) := "0000";	 		--wyjscie licznikow dekadowych	
 		Y2:inout STD_LOGIC_vector(3 downto 0) := "0000";
 		Y3:inout STD_LOGIC_vector(3 downto 0) := "0000";
-		Ylatch1:out STD_LOGIC_vector(3 downto 0);	 		--wyjscie licznikow dekadowych	
-		Ylatch2:out STD_LOGIC_vector(3 downto 0);
-		Ylatch3:out STD_LOGIC_vector(3 downto 0); 
-		Ycode1:out STD_LOGIC_vector(6 downto 0):="0000000";	   
-		Ycode2:out STD_LOGIC_vector(6 downto 0):="0000000";
-		Ycode3:out STD_LOGIC_vector(6 downto 0):="0000000";
+		--Ylatch1:out STD_LOGIC_vector(3 downto 0);	 		--wyjscie licznikow dekadowych	
+		--Ylatch2:out STD_LOGIC_vector(3 downto 0);
+		--Ylatch3:out STD_LOGIC_vector(3 downto 0); 
+		Y:out STD_LOGIC_vector(6 downto 0):="0000000";	   
+		--Ycode2:out STD_LOGIC_vector(6 downto 0):="0000000";
+		--Ycode3:out STD_LOGIC_vector(6 downto 0):="0000000";
 		fx:in STD_logic:='0';
 		LE:inout STD_LOGIC:='0';
 		CLK:in STD_LOGIC;
@@ -39,17 +39,17 @@ architecture TB_ARCHITECTURE of miernik_tb is
 	signal CLR: STD_LOGIC;
 	signal GATE : STD_LOGIC;   		
 	signal CLK : STD_LOGIC;	 
-	signal CEO: STD_LOGIC;
+	--signal CEO: STD_LOGIC;
 	-- Observed signals - signals mapped to the output ports of tested entity
 	signal Y1 : STD_LOGIC_VECTOR(3 downto 0);	  
 	signal Y2 : STD_LOGIC_VECTOR(3 downto 0);
 	signal Y3 : STD_LOGIC_VECTOR(3 downto 0);  
-	signal Ycode1 : STD_LOGIC_VECTOR(6 downto 0);	  
-	signal Ycode2 : STD_LOGIC_VECTOR(6 downto 0);
-	signal Ycode3 : STD_LOGIC_VECTOR(6 downto 0); 
-	signal Ylatch1 : STD_LOGIC_VECTOR(3 downto 0);	  
-	signal Ylatch2 : STD_LOGIC_VECTOR(3 downto 0);
-	signal Ylatch3 : STD_LOGIC_VECTOR(3 downto 0);	
+	signal Y : STD_LOGIC_VECTOR(6 downto 0);	  
+	--signal Ycode2 : STD_LOGIC_VECTOR(6 downto 0);
+	--signal Ycode3 : STD_LOGIC_VECTOR(6 downto 0); 
+	--signal Ylatch1 : STD_LOGIC_VECTOR(3 downto 0);	  
+	--signal Ylatch2 : STD_LOGIC_VECTOR(3 downto 0);
+	--signal Ylatch3 : STD_LOGIC_VECTOR(3 downto 0);	
 	signal LE : STD_LOGIC;
 	signal GATEOUT : STD_LOGIC; 
 	--signal GATEOUT2 : STD_LOGIC; 
@@ -65,17 +65,17 @@ begin
 	port map ( 
 			CLK=>CLK,
 			fx=>fx,	
-			CEO=>CEO,
+			--CEO=>CEO,
 			CLR=>CLR,
 			GATE=>GATE,	 
 			LE=>LE,
 			GATEOUT=>GATEOUT,	
-			Ylatch1 => Ylatch1,
-			Ylatch2 => Ylatch2,
-			Ylatch3 => Ylatch3,	
-			Ycode1 => Ycode1,
-			Ycode2 => Ycode2,
-			Ycode3 => Ycode3,
+			--Ylatch1 => Ylatch1,
+			--Ylatch2 => Ylatch2,
+			--Ylatch3 => Ylatch3,	
+			Y => Y,
+		--	Ycode2 => Ycode2,
+		--	Ycode3 => Ycode3,
 			Y1 => Y1,
 			Y2 => Y2,
 			Y3 => Y3	 			
@@ -96,11 +96,11 @@ CLR<='0';
 	wait for 100 ns;
 --	GATE<='1';
 	wait for 100 ns;
-	CLR<='1';
+	--CLR<='1';
 	wait for 100 ns;
 	CLR<='0';		   
 	wait for 530 ns; --830 ns - dzialanie res
-	CLR<='1';
+	--CLR<='1';
 	wait for 30 ns;
 	CLR<='0';
 	--GATE<='1';
@@ -137,13 +137,13 @@ begin
 	--wait for <time to next event>; -- <current time>
 	if END_SIM = FALSE then
 		CLK <= '0';
-		wait for 150 ns; --0 fs
+		wait for 32 ns; --0 fs
 	else
 		wait;
 	end if;
 	if END_SIM = FALSE then
 		CLK<= '1';
-		wait for 150 ns; --50 ns
+		wait for 32 ns; --50 ns
 	else
 		wait;
 	end if;

@@ -12,15 +12,8 @@ wave -noreg fx
 wave -noreg Ylatch1 	  
 wave -noreg Ylatch2 
 wave -noreg Ylatch3 
-wave -noreg Ycode1 	  
-wave -noreg Ycode2 
-wave -noreg Ycode3  
-wave -noreg Y1	 
-wave -noreg Y2
-wave -noreg Y3
-wave -noreg GATE	
-wave -noreg GATEIN
-wave -noreg GATEOUT
+wave -noreg Y	 
+wave -noreg GATE
 wave -noreg CEO
 run 2000.00 ns
 # The following lines can be used for timing simulation

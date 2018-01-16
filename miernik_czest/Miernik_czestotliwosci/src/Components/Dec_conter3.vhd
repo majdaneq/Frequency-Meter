@@ -25,15 +25,16 @@ begin
 	begin
 		if CLR='1' then   										--asynch res
 			Ylicznik<=(others => '0');		
-		elsif GATEIN='1' then 										--automat dziala
+			elsif GATEIN='1' then 										--automat dziala
 					if GATEIN2='1' then							--2gi licznik przepelniony
 						Ylicznik<=Ylicznik+1;
 							if Ylicznik="1001" then
 								Ylicznik<="0000";
-							end if ; 	
+							end if ;
+					else Ylicznik<="0000";
 					end if;	
-		else 
-			Ylicznik<="0000";
+			elsif GATEIN='0' then  Ylicznik<="0000";		
+		
 		end if;
 		
 			

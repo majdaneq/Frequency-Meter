@@ -1,4 +1,4 @@
-159
+405
 ~E 1 "./../src/automat.vhd" 6 automat
 ~A 1 "./../src/Components/automat.vhd" 17 automat
 ~E 1 "./../src/Core/Core.vhd" 6 Core
@@ -13,10 +13,14 @@
 ~A 0 "" 0 segcode
 ~E 0 "" 0 Fub2
 ~A 0 "" 0 Prescaler
+~E 0 "" 0 Fub3
+~A 0 "" 0 Mux
 ~E 1 "./../src/latch.vhd" 6 latch
 ~A 1 "./../src/Components/latch.vhd" 18 latch
 ~E 1 "./../src/miernik_tb.vhd" 7 miernik_tb
 ~A 1 "./../src/tb/miernik_tb.vhd" 10 TB_ARCHITECTURE
+~E 1 "./../src/Components/Mux.vhd" 6 Mux
+~A 1 "./../src/Components/Mux.vhd" 20 Mux
 ~E 1 "./../src/Prescaler.vhd" 20 Prescaler
 ~A 1 "./../src/Components/Prescaler.vhd" 30 Prescaler
 ~E 1 "./../src/segcode.vhd" 6 segcode
@@ -24,4 +28,4 @@
 ~C 1 "./../src/Core/Core_TB.vhd" 115 testbench_for_core
 ~C 1 "./../src/tb/miernik_tb.vhd" 159 testbench_for_top
 ~E 1 "./../compile/top.vhd" 28 top
-~A 1 "./../compile/top.vhd" 49 top
+~A 1 "./../compile/top.vhd" 43 top
